@@ -41,5 +41,18 @@ def receive():
 
             client.send("NAME".encode())
             name = client.recv(1024).decode()
+            names.append(name)
+            clients.append(client)
+
+            print(f"Name is {name}")
+            broadcast(f"{name} joined the chat!".encode())
+            client.send("Connected to server!".encode())
+
+            thread = threading.Thread(target=handle, args=(client,))
+            thread.start()
+
+receive()
+
+
 
 
