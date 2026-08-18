@@ -35,3 +35,11 @@ def receive():
 
         print("Server is running...")
 
+        while True:
+            client, address = server.accept()
+            print(f"Connected with {str(address)}")
+
+            client.send("NAME".encode())
+            name = client.recv(1024).decode()
+
+
