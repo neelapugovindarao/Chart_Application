@@ -24,3 +24,11 @@ def receive():
             client.close()
             break
 
+
+def write():
+    while True:
+        message = f"{name}: {input('')}"
+        client.send(message.encode())
+
+
+
