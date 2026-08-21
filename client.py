@@ -32,3 +32,11 @@ def write():
 
 
 
+receive_thread = threading.Thread(target=receive)
+receive_thread.start()
+
+write_thread = threading.Thread(target=write)
+write_thread.start()
+
+
+
