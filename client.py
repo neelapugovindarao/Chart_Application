@@ -19,6 +19,7 @@ def receive():
                 client.send(name.encode())
             else:
                 print(message)
+                
         except:
             print("An error occurred!")
             client.close()
